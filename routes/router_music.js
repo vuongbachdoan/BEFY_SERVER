@@ -103,11 +103,13 @@ const musicController = require('../controllers/controller_music');
 const express = require('express');
 const router = express.Router();
 
-router.get('/songs', musicController.allSongs);
+router.get('/', musicController.all);
 router.get('/song/:id', musicController.getSong);
+router.get('/chart', musicController.getTopSong);
 router.get('/artists', musicController.allArtists);
 router.get('/artist/:id', musicController.getArtist);
 router.get('/playlists', musicController.allPlaylists);
 router.get('/playlists/:id', musicController.getPlayList);
+router.get('/playlists/:id/details', musicController.getDetailPlaylist);
 
 module.exports = router;
